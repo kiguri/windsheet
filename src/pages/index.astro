@@ -3,6 +3,9 @@ import '../styles/global.css';
 import Cheatsheet from '@/components/cheatsheet';
 
 
+const canonicalURL = "https://windsheet.kiguri.codes"
+const ogImageURL = new URL("/sao.jpg", canonicalURL);
+
 ---
 
 <html lang="en">
@@ -11,7 +14,24 @@ import Cheatsheet from '@/components/cheatsheet';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Windsheet</title>
+		<title>TailwindCSS Cheat Sheet</title>
+
+				 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content="TailwindCSS Cheat Sheet" />
+    <meta property="og:description" content="Windsheet - TailwindCSS Cheat Sheet" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content="TailwindCSS Cheat Sheet"/>
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content="TailwindCSS Cheat Sheet" />
+    <meta property="twitter:description" content="Windsheet - TailwindCSS Cheat Sheet"  />
+    <meta property="twitter:image" content={ogImageURL} />
+
 	</head>
 
 	<body>

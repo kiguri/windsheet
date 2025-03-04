@@ -1,19 +1,11 @@
 ---
 import '../styles/global.css';
 
-interface Props {
-    title: string;
-    description?: string;
-    image?: string;
-		content: any
-}
-
 const { 
 		content,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = new URL("/sao.jpg", Astro.site);
+
 ---
 
 <html lang="en">
@@ -22,22 +14,6 @@ const ogImageURL = new URL("/sao.jpg", Astro.site);
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="description" content="Windsheet - TailwindCSS Cheat Sheet" />
-
-		 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalURL} />
-        <meta property="og:title" content={content.title} />
-        <meta property="og:description" content="Windsheet - TailwindCSS Cheat Sheet" />
-        <meta property="og:image" content={ogImageURL} />
-        <meta property="og:image:alt" content={content.title} />
-        
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={canonicalURL} />
-        <meta property="twitter:title" content={content.title} />
-        <meta property="twitter:description" content="Windsheet - TailwindCSS Cheat Sheet"  />
-        <meta property="twitter:image" content={ogImageURL} />
 
 		<title>{content.title}</title>
 	</head>
